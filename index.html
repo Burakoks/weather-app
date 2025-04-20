@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hava Durumu Uygulaması</title>
+    <!-- * Css Link -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- * Font Awesome Cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- * Container -->
+    <div class="container">
+      <!-- * Header -->
+      <header>
+        <!-- Title -->
+        <h1>Hava Durumu</h1>
+        <div class="theme-toggle">
+          <button id="theme-toggle-btn">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+        <form class="search-box">
+          <input
+            type="search"
+            placeholder="Şehir adı giriniz ..."
+            id="location-input"
+            list="turkish-cities"
+          />
+          <!-- * input - datalist ikilisi ile input'un içerisine aratılacak değer eşlemesi yapabiliriz. -->
+          <datalist id="turkish-cities">
+            <!-- Js ile dolduruldu -->
+          </datalist>
+
+          <button type="submit" id="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </header>
+
+      <!-- * Error -->
+      <div class="error-message" id="error-message">
+        <p>Şehir bulunamadı. Lütfen geçerli bir şehir adı girin.</p>
+      </div>
+
+      <!-- * Loader -->
+      <div class="loader-container" id="loader">
+        <div class="loader"></div>
+      </div>
+
+      <!-- * Weather Container -->
+      <div id="weather-container" class="weather-container hidden">
+        <!-- Weather Card -->
+        <div class="weather-card">
+          <!-- Header -->
+          <div class="weather-header">
+            <div class="location-info">
+              <h2 id="location">Adana, TR</h2>
+              <div class="country-flag"></div>
+            </div>
+            <p id="date">1 Ocak 2025 Çarşamba</p>
+          </div>
+
+          <!-- Weather Info   -->
+          <div class="weather-info">
+            <!-- Temperature -->
+            <div class="temperature">
+              <h3 id="temperature">15°C</h3>
+              <p id="feel-like">Hissedilen: 15°C</p>
+            </div>
+
+            <!-- Weather Icon -->
+            <div class="weather-icon">
+              <img
+                src="https://openweathermap.org/img/wn/02n@2x.png"
+                alt="icon"
+              />
+              <p id="weather-description">az bulutlu</p>
+            </div>
+          </div>
+          <!-- Weather Details -->
+          <div class="weather-details">
+            <!-- Wind -->
+            <div class="detail">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Rüzgar Hızı</p>
+                <p id="wind-speed">2.06 m/s</p>
+              </div>
+            </div>
+            <!-- Humidity -->
+            <div class="detail">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Nem</p>
+                <p id="humidity">81%</p>
+              </div>
+            </div>
+            <!-- Pressure -->
+            <div class="detail">
+              <i class="fas fa-compress-arrows-alt"></i>
+              <div>
+                <p>Basınç</p>
+                <p id="pressure">1016 hPa</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- * Js Bağlantı  -->
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
