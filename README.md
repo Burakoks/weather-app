@@ -13,6 +13,4 @@ Bu, kullanıcıların anlık hava durumu verilerine erişebileceği basit bir ha
 
 ![](ekran.gif)
 
-## Canlı Demo
 
-https://weather-app-ek9x.vercel.app/
